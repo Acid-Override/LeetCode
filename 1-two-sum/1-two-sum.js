@@ -6,7 +6,6 @@
 
 
 var twoSum = function(nums, target) {
-  debugger
   let cache = {}
   let shouldSkip = false;
   var result = []
