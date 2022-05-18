@@ -3,15 +3,24 @@
  * @param {number} target
  * @return {number[]}
  */
+
+
 var twoSum = function(nums, target) {
-  for (let i = 0; i < nums.length; i++ ) {
-    let counter = i + 1
-    while( counter !== nums.length) {
-      if (nums[i] + nums[counter] === target) {
-        return [i, counter]
-      }
-      counter++
+  debugger
+  let cache = {}
+  let shouldSkip = false;
+  var result = []
+
+nums.forEach((element, index) => {
+    if (shouldSkip) return;
+
+    var res = target - element
+
+    if (res in cache) {
+      shouldSkip = true
+      result = [index, cache[res]]
     }
-  }
-return null
-};
+    cache[element] = index
+  });
+  return result
+}
