@@ -5,21 +5,17 @@
  */
 
 
-var twoSum = function(nums, target) {
-  let cache = {}
-  let shouldSkip = false;
-  var result = []
+var twoSum = function(nums, target) {  
+  while(nums) {
+    var idx1 = nums.length - 1
+    var num1 = nums[idx1]
+    var num2 = target - num1
+    nums.pop()
 
-nums.forEach((element, index) => {
-    if (shouldSkip) return;
-
-    var res = target - element
-
-    if (res in cache) {
-      shouldSkip = true
-      result = [index, cache[res]]
+    let idx2 = nums.indexOf(num2)
+    if( idx2 > -1 ) {
+      return [idx1, idx2]
     }
-    cache[element] = index
-  });
-  return result
+  }
+  return null
 }
