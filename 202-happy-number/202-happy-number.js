@@ -7,7 +7,7 @@ var isHappy = function(n) {
    let counter = 0
    
 
-   while ( n !== 1 ) {
+   while ( n !== 1 && n < Infinity ) {
     let sum = 0
     n = n + ''
     for (let i = 0; i < n.length; i++ ) {
