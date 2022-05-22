@@ -16,22 +16,14 @@
 }
 
 var preorder = function(root) {
-  debugger
-
-  // pure recursion
-
-  // is root a truthy value?
-
+  
   if (!root) {
-    return []//end this executaion context
+    return []
   }
-
-  // otherwise, store the current node value
 
   let result =[]
   result.push(root.val)
 
-  //recursively call on each child node
   if (root.children.length){
     for (let i = 0; i < root.children.length; i++ ) {
       result = result.concat(preorder(root.children[i]))
