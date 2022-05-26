@@ -11,12 +11,12 @@
  */
  var getDecimalValue = function(head) {
 
-    let accArr = []
+    let accStr = ''
 
     while ( head ) {
-      accArr.push(head.val)
-      console.log(head.val)
+      accStr += head.val
+      console.log(accStr)
       head = head.next
     }
-    return parseInt(accArr.join(''), 2)
+    return parseInt(accStr, 2)
 };
