@@ -9,7 +9,7 @@
  * @param {ListNode} head
  * @return {number}
  */
- var pairSum = function(head) {
+  var pairSum = function(head) {
   let arr = []
   let maxPair = 0
   let pair;
@@ -20,9 +20,7 @@
   }
    for ( let i = 0; i <= arr.length/2; i++ ) {
     pair = arr[i] + arr[arr.length - 1 - i]
-    if ( pair > maxPair ) {
-      maxPair = pair
-    }
+    maxPair = Math.max(pair, maxPair)
    }
    return maxPair
 };
