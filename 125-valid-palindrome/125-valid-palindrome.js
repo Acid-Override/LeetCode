@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {boolean}
  */
- var isPalindrome = function(s) {
+var isPalindrome = function(s) {
 
     s = s.toLowerCase().split('')
     let str = ''
@@ -14,10 +14,5 @@
       }
     }
 
-  for ( let i = 0; i < Math.ceil(str.length/2); i++ ) {
-    if ( str[i] !== str[str.length - 1 - i]) {
-      return false
-    }
-  }
-  return true
+  return str.split('').reverse().join('') === str
 };
