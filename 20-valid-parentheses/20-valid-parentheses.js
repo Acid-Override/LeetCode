@@ -2,36 +2,32 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s) {  
+var isValid = function(s) {
   if(s.length % 2 === 1) {
     return false
   }
 
-  var accArr = []
+      let arr = []
 
-  for (let i = 0; i < s.length; i++ ) {
-    if (s[i] === '(' || s[i] === '[' || s[i] === '{') {
-      accArr.push(s[i])
-      continue
-    }
-
-
-  let end = accArr.length - 1
-
-  if ( s[i] === ')' && accArr[end] === '(' ){
-    accArr.pop()
-    continue
-  }
-  if ( s[i] === ']' && accArr[end] === '[' ){
-    accArr.pop()
-    continue
-  }
-  if ( s[i] === '}' && accArr[end] === '{' ){
-    accArr.pop()
-    continue
-  }
-  return false;
-  }
-
-  return accArr.length === 0
-};
+      for ( let i = 0; i < s.length; i++ ) {
+        if ( s[i] === '(' || s[i] === '[' || s[i] === '{' ) {
+          arr.push(s[i]);
+          continue
+        }
+        if ( s[i] === ')' && arr[arr.length - 1] === '(' ) {
+          arr.pop();
+          continue;
+        }
+        if ( s[i] === ']' && arr[arr.length - 1] === '[' ) {
+          arr.pop();
+          continue;
+        }
+        if ( s[i] === '}' && arr[arr.length - 1] === '{' ) {
+          arr.pop()
+          continue;
+        }
+          return false;
+      }
+      return arr.length === 0
+ }
+ 
